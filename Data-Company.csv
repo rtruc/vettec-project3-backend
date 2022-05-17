@@ -1,0 +1,27 @@
+company_id,company_name,location_id
+1,Anheuser-Busch,5
+2,Molson Coors,6
+3,AB InBev,16
+4,Diageo (DGE),18
+5,MillerCoors,6
+6,Heineken Holdings,19
+7,Romulus Capital,13
+8,Sheehan Family Companies,21
+9,New Belgium Brewing,22
+10,Dover Publications,14
+11,SDC Publication,23
+12,Ozu Publishing,28
+13,Dynabox Publishing,27
+14,Podcat Publishing,24
+15,Voolith Publishing,39
+16,Kwimbee Publishing,26
+17,Twiyo Books,30
+18,Wikizz Books,25
+19,Rhynoodle Books,31
+20,Zoonoodle Books,29
+21,Skaboo Books,38
+22,Fanoodle Printing,33
+23,Wikibox Printing,35
+24,Riffpedia Printing,34
+25,Feednation Printing,37
+26,Tagchat Printing,32
