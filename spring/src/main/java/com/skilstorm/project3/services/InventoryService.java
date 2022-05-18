@@ -10,6 +10,7 @@ public interface InventoryService {
 	Iterable<Inventory> findAll();
 	Inventory findByID(int inventoryID);
 	List<Inventory> findByWarehouseID(int warehouseID);
+	List<Inventory> findByWarehouseIDandItemID(int warehouseID, int inventoryID);
 	
 	// CREATE
 	Inventory createInventory(Inventory inventory);

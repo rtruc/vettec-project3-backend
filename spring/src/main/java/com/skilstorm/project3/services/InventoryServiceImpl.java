@@ -15,6 +15,8 @@ public class InventoryServiceImpl implements InventoryService {
 	@Autowired
 	private InventoryRepository repository;
 	
+	
+	
 	@Override
 	public Iterable<Inventory> findAll() {
 		return repository.findAll();
@@ -28,19 +30,26 @@ public class InventoryServiceImpl implements InventoryService {
 	
 	@Override
 	public List<Inventory> findByWarehouseID(int warehouseID) {
-		// TODO: Write Query to find only items with matching warehouseID
-		Optional<List<Inventory>> optInventory = Optional.of(repository.findByWarehouseWarehouseID(warehouseID));
+		Optional<List<Inventory>> optInventory = repository.findByWarehouseWarehouseID(warehouseID);
 		return optInventory.isPresent() ? optInventory.get() : null;
-//		return null;
+	}
+	
+	@Override
+	public List<Inventory> findByWarehouseIDandItemID(int warehouseID, int itemID) {
+		Optional<List<Inventory>> optInventory = repository.findByWarehouseWarehouseIDAndItemItemID(warehouseID, itemID);		
+		return optInventory.isPresent() ? optInventory.get() : null;
 	}
 
 
+	
 	@Override
 	public Inventory createInventory(Inventory inventory) {
 		return repository.save(inventory);
 
 	}
 
+	
+	
 	@Override
 	public Inventory updateInventory(Inventory inventory, int inventoryID) {
 		findByID(inventoryID);
@@ -48,11 +57,11 @@ public class InventoryServiceImpl implements InventoryService {
 		return repository.save(inventory);
 	}
 
+	
+	
 	@Override
 	public void deleteInventoryById(int inventoryID) {
 		repository.deleteById(inventoryID);		
 		
 	}
-
-
 }

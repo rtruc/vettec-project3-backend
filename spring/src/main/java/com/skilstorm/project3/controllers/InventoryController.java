@@ -25,32 +25,45 @@ public class InventoryController {
 	@Autowired
 	private InventoryService service;
 	
+	
+	
 	@GetMapping("/inventories")
 	public Iterable<Inventory> findAll() {
 		return service.findAll();
 	}
 	
-	
 	@GetMapping("/inventories/{inventoryID}")
 	public Inventory findById(@PathVariable int inventoryID) {
 		return service.findByID(inventoryID);
 	}
+	
 	@GetMapping("/warehouses/{warehouseID}")
 	public List<Inventory> findByWarehouse(@PathVariable int warehouseID) {
 		return service.findByWarehouseID(warehouseID);
 	}
 	
+	@GetMapping("/warehouses/{warehouseID}/{inventoryID}")
+	public List<Inventory> findByWarehouseandItemID(@PathVariable int warehouseID, @PathVariable int inventoryID) {
+		return service.findByWarehouseIDandItemID(warehouseID, inventoryID);
+	}
+	
+	
+	
 	// CREATE
-	@PostMapping("/inventories") // POST HTTP Request /authors
+	@PostMapping("/inventories")
 	public void createAuthor(@RequestBody Inventory inventory) {
 		service.createInventory(inventory);
 	}
 	
+	
+	
 	// UPDATE
-	@PutMapping("/inventories/{inventoryID}") // PUT HTTP Request /authors
+	@PutMapping("/inventories/{inventoryID}")
 	public void updateAuthor(@RequestBody Inventory inventory, @PathVariable int inventoryID) {
 		service.updateInventory(inventory, inventoryID);
 	}
+	
+	
 	
 	//DELETE
 	@DeleteMapping("/inventories/{inventoryID}")
