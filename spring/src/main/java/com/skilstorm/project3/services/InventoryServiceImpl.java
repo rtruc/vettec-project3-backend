@@ -1,5 +1,6 @@
 package com.skilstorm.project3.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,15 @@ public class InventoryServiceImpl implements InventoryService {
 		Optional<Inventory> optInventory = repository.findById(inventoryID);
 		return optInventory.isPresent() ? optInventory.get() : null;
 	}
+	
+	@Override
+	public List<Inventory> findByWarehouseID(int warehouseID) {
+		// TODO: Write Query to find only items with matching warehouseID
+		Optional<List<Inventory>> optInventory = Optional.of(repository.findByWarehouseWarehouseID(warehouseID));
+		return optInventory.isPresent() ? optInventory.get() : null;
+//		return null;
+	}
+
 
 	@Override
 	public Inventory createInventory(Inventory inventory) {
@@ -43,5 +53,6 @@ public class InventoryServiceImpl implements InventoryService {
 		repository.deleteById(inventoryID);		
 		
 	}
+
 
 }

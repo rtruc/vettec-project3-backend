@@ -1,6 +1,7 @@
 package com.skilstorm.project3.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import com.skilstorm.project3.models.Warehouse;
 import com.skilstorm.project3.services.WarehouseService;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
 @RequestMapping("/warehouses")
 public class WarehouseController {
 
@@ -26,10 +28,10 @@ public class WarehouseController {
 	}
 	
 	
-	@GetMapping("/{warehouseID}")
-	public Warehouse findById(@PathVariable int warehouseID) {
-		return service.findByID(warehouseID);
-	}
+//	@GetMapping("/{warehouseID}")
+//	public Warehouse findById(@PathVariable int warehouseID) {
+//		return service.findByID(warehouseID);
+//	}
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors

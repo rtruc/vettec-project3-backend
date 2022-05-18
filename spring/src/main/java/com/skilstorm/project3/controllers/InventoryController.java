@@ -1,6 +1,9 @@
 package com.skilstorm.project3.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,37 +17,43 @@ import com.skilstorm.project3.models.Inventory;
 import com.skilstorm.project3.services.InventoryService;
 
 @RestController
-@RequestMapping("/inventories")
+@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+
+//@RequestMapping("/inventories")
 public class InventoryController {
 
 	@Autowired
 	private InventoryService service;
 	
-	@GetMapping
+	@GetMapping("/inventories")
 	public Iterable<Inventory> findAll() {
 		return service.findAll();
 	}
 	
 	
-	@GetMapping("/{inventoryID}")
+	@GetMapping("/inventories/{inventoryID}")
 	public Inventory findById(@PathVariable int inventoryID) {
 		return service.findByID(inventoryID);
 	}
+	@GetMapping("/warehouses/{warehouseID}")
+	public List<Inventory> findByWarehouse(@PathVariable int warehouseID) {
+		return service.findByWarehouseID(warehouseID);
+	}
 	
 	// CREATE
-	@PostMapping // POST HTTP Request /authors
+	@PostMapping("/inventories") // POST HTTP Request /authors
 	public void createAuthor(@RequestBody Inventory inventory) {
 		service.createInventory(inventory);
 	}
 	
 	// UPDATE
-	@PutMapping("/{inventoryID}") // PUT HTTP Request /authors
+	@PutMapping("/inventories/{inventoryID}") // PUT HTTP Request /authors
 	public void updateAuthor(@RequestBody Inventory inventory, @PathVariable int inventoryID) {
 		service.updateInventory(inventory, inventoryID);
 	}
 	
 	//DELETE
-	@DeleteMapping("/{inventoryID}")
+	@DeleteMapping("/inventories/{inventoryID}")
 	public void deleteAuthorById(@PathVariable int inventoryID) {
 		service.deleteInventoryById(inventoryID);
 	}
