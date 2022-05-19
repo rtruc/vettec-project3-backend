@@ -54,7 +54,7 @@ public class InventoryController {
 	public void createAuthor(@RequestBody Inventory inventory) {
 		service.createInventory(inventory);
 	}
-	
+//	@PostMapping()
 	
 	
 	// UPDATE
