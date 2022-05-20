@@ -35,19 +35,19 @@ public class CompanyController {
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors
-	public void createAuthor(@RequestBody Company company) {
+	public void createCompany(@RequestBody Company company) {
 		service.createCompany(company);
 	}
 	
 	// UPDATE
 	@PutMapping("/{companyID}") // PUT HTTP Request /authors
-	public void updateAuthor(@RequestBody Company company, @PathVariable int companyID) {
+	public void updateCompany(@RequestBody Company company, @PathVariable int companyID) {
 		service.updateCompany(company, companyID);
 	}
 	
 	//DELETE
 	@DeleteMapping("/{companyID}")
-	public void deleteAuthorById(@PathVariable int companyID) {
+	public void deleteCompanyById(@PathVariable int companyID) {
 		service.deleteCompanyById(companyID);
 	}
 	

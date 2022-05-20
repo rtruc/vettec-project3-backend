@@ -35,19 +35,19 @@ public class BrandController {
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors
-	public void createAuthor(@RequestBody Brand brand) {
+	public void createBrand(@RequestBody Brand brand) {
 		service.createBrand(brand);
 	}
 	
 	// UPDATE
 	@PutMapping("/{brandID}") // PUT HTTP Request /authors
-	public void updateAuthor(@RequestBody Brand brand, @PathVariable int brandID) {
+	public void updateBrand(@RequestBody Brand brand, @PathVariable int brandID) {
 		service.updateBrand(brand, brandID);
 	}
 	
 	//DELETE
 	@DeleteMapping("/{brandID}")
-	public void deleteAuthorById(@PathVariable int brandID) {
+	public void deleteBrandById(@PathVariable int brandID) {
 		service.deleteBrandById(brandID);
 	}
 	

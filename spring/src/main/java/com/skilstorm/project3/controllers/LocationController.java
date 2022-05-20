@@ -35,19 +35,19 @@ public class LocationController {
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors
-	public void createAuthor(@RequestBody Location location) {
+	public void createLocation(@RequestBody Location location) {
 		service.createLocation(location);
 	}
 	
 	// UPDATE
 	@PutMapping("/{locationID}") // PUT HTTP Request /authors
-	public void updateAuthor(@RequestBody Location location, @PathVariable int locationID) {
+	public void updateLocation(@RequestBody Location location, @PathVariable int locationID) {
 		service.updateLocation(location, locationID);
 	}
 	
 	//DELETE
 	@DeleteMapping("/{locationID}")
-	public void deleteAuthorById(@PathVariable int locationID) {
+	public void deleteLocationById(@PathVariable int locationID) {
 		service.deleteLocationById(locationID);
 	}
 	

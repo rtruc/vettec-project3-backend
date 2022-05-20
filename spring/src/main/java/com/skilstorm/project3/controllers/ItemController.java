@@ -35,19 +35,19 @@ public class ItemController {
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors
-	public void createAuthor(@RequestBody Item item) {
+	public void createItem(@RequestBody Item item) {
 		service.createItem(item);
 	}
 	
 	// UPDATE
 	@PutMapping("/{itemID}") // PUT HTTP Request /authors
-	public void updateAuthor(@RequestBody Item item, @PathVariable int itemID) {
+	public void updateItem(@RequestBody Item item, @PathVariable int itemID) {
 		service.updateItem(item, itemID);
 	}
 	
 	//DELETE
 	@DeleteMapping("/{itemID}")
-	public void deleteAuthorById(@PathVariable int itemID) {
+	public void deleteItemById(@PathVariable int itemID) {
 		service.deleteItemById(itemID);
 	}
 	

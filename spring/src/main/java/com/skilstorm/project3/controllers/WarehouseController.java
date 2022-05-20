@@ -35,19 +35,19 @@ public class WarehouseController {
 	
 	// CREATE
 	@PostMapping // POST HTTP Request /authors
-	public void createAuthor(@RequestBody Warehouse warehouse) {
+	public void createWarehouse(@RequestBody Warehouse warehouse) {
 		service.createWarehouse(warehouse);
 	}
 	
 	// UPDATE
 	@PutMapping("/{warehouseID}") // PUT HTTP Request /authors
-	public void updateAuthor(@RequestBody Warehouse warehouse, @PathVariable int warehouseID) {
+	public void updateWarehouse(@RequestBody Warehouse warehouse, @PathVariable int warehouseID) {
 		service.updateWarehouse(warehouse, warehouseID);
 	}
 	
 	//DELETE
 	@DeleteMapping("/{warehouseID}")
-	public void deleteAuthorById(@PathVariable int warehouseID) {
+	public void deleteWarehouseById(@PathVariable int warehouseID) {
 		service.deleteWarehouseById(warehouseID);
 	}
 	

@@ -51,7 +51,7 @@ public class InventoryController {
 	
 	// CREATE
 	@PostMapping("/inventories")
-	public void createAuthor(@RequestBody Inventory inventory) {
+	public void createInventory(@RequestBody Inventory inventory) {
 		service.createInventory(inventory);
 	}
 //	@PostMapping()
@@ -59,7 +59,7 @@ public class InventoryController {
 	
 	// UPDATE
 	@PutMapping("/inventories/{inventoryID}")
-	public void updateAuthor(@RequestBody Inventory inventory, @PathVariable int inventoryID) {
+	public void updateInventory(@RequestBody Inventory inventory, @PathVariable int inventoryID) {
 		service.updateInventory(inventory, inventoryID);
 	}
 	
@@ -67,7 +67,7 @@ public class InventoryController {
 	
 	//DELETE
 	@DeleteMapping("/inventories/{inventoryID}")
-	public void deleteAuthorById(@PathVariable int inventoryID) {
+	public void deleteInventoryById(@PathVariable int inventoryID) {
 		service.deleteInventoryById(inventoryID);
 	}
 	
