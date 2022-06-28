@@ -15,7 +15,7 @@ import com.skilstorm.project3.models.Company;
 import com.skilstorm.project3.services.CompanyService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 @RequestMapping("/companies")
 public class CompanyController {
 

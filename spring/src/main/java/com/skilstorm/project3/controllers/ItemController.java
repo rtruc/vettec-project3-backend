@@ -15,7 +15,7 @@ import com.skilstorm.project3.models.Item;
 import com.skilstorm.project3.services.ItemService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 @RequestMapping("/items")
 public class ItemController {
 

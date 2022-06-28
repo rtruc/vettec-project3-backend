@@ -17,7 +17,7 @@ import com.skilstorm.project3.models.Inventory;
 import com.skilstorm.project3.services.InventoryService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 
 //@RequestMapping("/inventories")
 public class InventoryController {

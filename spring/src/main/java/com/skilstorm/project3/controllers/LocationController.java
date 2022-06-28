@@ -15,7 +15,7 @@ import com.skilstorm.project3.models.Location;
 import com.skilstorm.project3.services.LocationService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 
 @RequestMapping("/locations")
 public class LocationController {

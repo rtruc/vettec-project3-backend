@@ -15,7 +15,7 @@ import com.skilstorm.project3.models.Brand;
 import com.skilstorm.project3.services.BrandService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://www.mywebsite.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 @RequestMapping("/brands")
 public class BrandController {
 
