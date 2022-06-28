@@ -21,9 +21,8 @@ public class Brand {
 	@Column(name = "brand_name")
 	private String brandName;
 	
-	@ManyToOne
-	@JoinColumn(name = "company_id")
-	private Company company;
+	@Column(name = "company_id")
+	private int companyID;
 	
 	@ManyToOne
 	@JoinColumn(name = "location_id")
@@ -38,16 +37,16 @@ public class Brand {
 		this.brandID = brandID;
 	}
 	
-	public Brand(String brandName, Company company, Location location) {
+	public Brand(String brandName, int companyID, Location location) {
 		this.brandName = brandName;
-		this.company = company;
+		this.companyID = companyID;
 		this.location = location;
 	}
 	
-	public Brand(int brandID, String brandName, Company company, Location location) {
+	public Brand(int brandID, String brandName, int companyID, Location location) {
 		this.brandID = brandID;
 		this.brandName = brandName;
-		this.company = company;
+		this.companyID = companyID;
 		this.location = location;
 	}
 
@@ -67,14 +66,14 @@ public class Brand {
 		this.brandName = brandName;
 	}
 
-	public Company getCompany() {
-		return company;
+	public int getCompanyID() {
+		return companyID;
 	}
-
-	public void setCompany(Company company) {
-		this.company = company;
+	
+	public void setCompanyID(int companyID) {
+		this.companyID = companyID;
 	}
-
+	
 	public Location getLocation() {
 		return location;
 	}
@@ -85,7 +84,7 @@ public class Brand {
 
 	@Override
 	public String toString() {
-		return "Brand [brandID=" + brandID + ", brandName=" + brandName + ", company=" + company + ", location="
+		return "Brand [brandID=" + brandID + ", brandName=" + brandName + ", companyID=" + companyID + ", location="
 				+ location + "]";
 	}
 	

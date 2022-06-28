@@ -18,9 +18,8 @@ public class Inventory {
 	@Column(name = "inventory_id")
 	private int inventoryID;
 	
-	@ManyToOne
-	@JoinColumn(name = "warehouse_id")
-	private Warehouse warehouse;
+	@Column(name = "warehouse_id")
+	private int warehouseID;
 	
 	@ManyToOne
 	@JoinColumn(name = "item_id")
@@ -41,16 +40,16 @@ public class Inventory {
 		this.inventoryID = inventoryID;
 	}
 	
-	public Inventory(Warehouse warehouse, Item item, int quantity, String inventoryDate) {
-		this.warehouse = warehouse;
+	public Inventory(int warehouseID, Item item, int quantity, String inventoryDate) {
+		this.warehouseID = warehouseID;
 		this.item = item;
 		this.quantity = quantity;
 		this.inventoryDate = inventoryDate;
 	}
 	
-	public Inventory(int inventoryID, Warehouse warehouse, Item item, int quantity, String inventoryDate) {
+	public Inventory(int inventoryID, int warehouseID, Item item, int quantity, String inventoryDate) {
 		this.inventoryID = inventoryID;
-		this.warehouse = warehouse;
+		this.warehouseID = warehouseID;
 		this.item = item;
 		this.quantity = quantity;
 		this.inventoryDate = inventoryDate;
@@ -64,12 +63,12 @@ public class Inventory {
 		this.inventoryID = inventoryID;
 	}
 
-	public Warehouse getWarehouse() {
-		return warehouse;
+	public int getWarehouseID() {
+		return warehouseID;
 	}
-
-	public void setWarehouse(Warehouse warehouse) {
-		this.warehouse = warehouse;
+	
+	public void setWarehouseID(int warehouseID) {
+		this.warehouseID = warehouseID;
 	}
 
 	public Item getItem() {
@@ -98,7 +97,7 @@ public class Inventory {
 
 	@Override
 	public String toString() {
-		return "Inventory [inventoryID=" + inventoryID + ", warehouse=" + warehouse + ", item=" + item + ", quantity="
+		return "Inventory [inventoryID=" + inventoryID + ", warehouseID=" + warehouseID + ", item=" + item + ", quantity="
 				+ quantity + ", inventoryDate=" + inventoryDate + "]";
 	}
 

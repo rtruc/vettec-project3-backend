@@ -10,7 +10,7 @@ import com.skilstorm.project3.models.Inventory;
 
 @Repository
 public interface InventoryRepository extends CrudRepository<Inventory, Integer>{
-	Optional<List<Inventory>> findByWarehouseWarehouseID(int warehouseID);
-	Optional<List<Inventory>> findByWarehouseWarehouseIDAndItemItemID(int warehouseID, int itemID);
+	Optional<List<Inventory>> findByWarehouseID(int warehouseID);
+	Optional<List<Inventory>> findByWarehouseIDAndItemItemID(int warehouseID, int itemID);
 	Optional<List<Inventory>> findByItemItemID(int itemID);
 }

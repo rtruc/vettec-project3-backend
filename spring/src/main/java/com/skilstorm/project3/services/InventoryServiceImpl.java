@@ -30,13 +30,13 @@ public class InventoryServiceImpl implements InventoryService {
 	
 	@Override
 	public List<Inventory> findByWarehouseID(int warehouseID) {
-		Optional<List<Inventory>> optInventory = repository.findByWarehouseWarehouseID(warehouseID);
+		Optional<List<Inventory>> optInventory = repository.findByWarehouseID(warehouseID);
 		return optInventory.isPresent() ? optInventory.get() : null;
 	}
 	
 	@Override
 	public List<Inventory> findByWarehouseIDandItemID(int warehouseID, int itemID) {
-		Optional<List<Inventory>> optInventory = repository.findByWarehouseWarehouseIDAndItemItemID(warehouseID, itemID);		
+		Optional<List<Inventory>> optInventory = repository.findByWarehouseIDAndItemItemID(warehouseID, itemID);		
 		return optInventory.isPresent() ? optInventory.get() : null;
 	}
 
