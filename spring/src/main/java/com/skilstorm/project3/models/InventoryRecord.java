@@ -10,8 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "inventory")
-public class Inventory {
+@Table(name = "inventory_record")
+public class InventoryRecord {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,22 +32,22 @@ public class Inventory {
 	private String inventoryDate;
 	
 	
-	public Inventory() {
+	public InventoryRecord() {
 		
 	}
 	
-	public Inventory(int inventoryID) {
+	public InventoryRecord(int inventoryID) {
 		this.inventoryID = inventoryID;
 	}
 	
-	public Inventory(int warehouseID, Item item, int quantity, String inventoryDate) {
+	public InventoryRecord(int warehouseID, Item item, int quantity, String inventoryDate) {
 		this.warehouseID = warehouseID;
 		this.item = item;
 		this.quantity = quantity;
 		this.inventoryDate = inventoryDate;
 	}
 	
-	public Inventory(int inventoryID, int warehouseID, Item item, int quantity, String inventoryDate) {
+	public InventoryRecord(int inventoryID, int warehouseID, Item item, int quantity, String inventoryDate) {
 		this.inventoryID = inventoryID;
 		this.warehouseID = warehouseID;
 		this.item = item;

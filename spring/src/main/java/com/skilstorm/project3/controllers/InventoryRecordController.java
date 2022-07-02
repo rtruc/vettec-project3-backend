@@ -13,61 +13,61 @@ import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skilstorm.project3.models.Inventory;
-import com.skilstorm.project3.services.InventoryService;
+import com.skilstorm.project3.models.InventoryRecord;
+import com.skilstorm.project3.services.InventoryRecordService;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000", "http://www.ubno.com"})
 
-//@RequestMapping("/inventories")
-public class InventoryController {
+//@RequestMapping("/inventoryRecords")
+public class InventoryRecordController {
 
 	@Autowired
-	private InventoryService service;
+	private InventoryRecordService service;
 	
 	
 	
-	@GetMapping("/inventories")
-	public Iterable<Inventory> findAll() {
+	@GetMapping("/inventoryRecords")
+	public Iterable<InventoryRecord> findAll() {
 		return service.findAll();
 	}
 	
-	@GetMapping("/inventories/{inventoryID}")
-	public Inventory findById(@PathVariable int inventoryID) {
+	@GetMapping("/inventoryRecords/{inventoryID}")
+	public InventoryRecord findById(@PathVariable int inventoryID) {
 		return service.findByID(inventoryID);
 	}
 	
 	@GetMapping("/warehouses/{warehouseID}")
-	public List<Inventory> findByWarehouse(@PathVariable int warehouseID) {
+	public List<InventoryRecord> findByWarehouse(@PathVariable int warehouseID) {
 		return service.findByWarehouseID(warehouseID);
 	}
 	
 	@GetMapping("/warehouses/{warehouseID}/{inventoryID}")
-	public List<Inventory> findByWarehouseandItemID(@PathVariable int warehouseID, @PathVariable int inventoryID) {
+	public List<InventoryRecord> findByWarehouseandItemID(@PathVariable int warehouseID, @PathVariable int inventoryID) {
 		return service.findByWarehouseIDandItemID(warehouseID, inventoryID);
 	}
 	
 	
 	
 	// CREATE
-	@PostMapping("/inventories")
-	public void createInventory(@RequestBody Inventory inventory) {
-		service.createInventory(inventory);
+	@PostMapping("/inventoryRecords")
+	public void createInventoryRecord(@RequestBody InventoryRecord inventoryRecord) {
+		service.createInventoryRecord(inventoryRecord);
 	}
 	
 	
 	// UPDATE
-	@PutMapping("/inventories/{inventoryID}")
-	public void updateInventory(@RequestBody Inventory inventory, @PathVariable int inventoryID) {
-		service.updateInventory(inventory, inventoryID);
+	@PutMapping("/inventoryRecords/{inventoryID}")
+	public void updateInventory(@RequestBody InventoryRecord inventory, @PathVariable int inventoryID) {
+		service.updateInventoryRecord(inventory, inventoryID);
 	}
 	
 	
 	
 	//DELETE
-	@DeleteMapping("/inventories/{inventoryID}")
+	@DeleteMapping("/inventoryRecords/{inventoryID}")
 	public void deleteInventoryById(@PathVariable int inventoryID) {
-		service.deleteInventoryById(inventoryID);
+		service.deleteInventoryRecordById(inventoryID);
 	}
 	
 }
